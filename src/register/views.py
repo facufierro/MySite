@@ -1,5 +1,8 @@
+
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
+from django.http import HttpResponse, HttpResponseRedirect
+
 # Create your views here.
 
 
@@ -12,3 +15,7 @@ def register(response):
     else:
         form = RegisterForm()
     return render(response, "registration/register.html", {"form": form})
+
+
+def login(request):
+    return redirect("/login")
